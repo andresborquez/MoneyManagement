@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2013 for Web
 VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyManagement", "MoneyManagement\MoneyManagement.csproj", "{D1591E39-8EEC-4EAA-822E-4753B2A94322}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyManagement.View", "MoneyManagement\MoneyManagement.View.csproj", "{D1591E39-8EEC-4EAA-822E-4753B2A94322}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyManagement.DataLayer", "MoneyManagement.DataLayer\MoneyManagement.DataLayer.csproj", "{52ED665A-9E96-4ABE-86EC-D43A8EF7F58D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoneyManagement.Contracts", "MoneyManagement.Contracts\MoneyManagement.Contracts.csproj", "{BDD015AC-0EA5-4A1D-B71A-465FF47216EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D1591E39-8EEC-4EAA-822E-4753B2A94322}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1591E39-8EEC-4EAA-822E-4753B2A94322}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1591E39-8EEC-4EAA-822E-4753B2A94322}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52ED665A-9E96-4ABE-86EC-D43A8EF7F58D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52ED665A-9E96-4ABE-86EC-D43A8EF7F58D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52ED665A-9E96-4ABE-86EC-D43A8EF7F58D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52ED665A-9E96-4ABE-86EC-D43A8EF7F58D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDD015AC-0EA5-4A1D-B71A-465FF47216EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDD015AC-0EA5-4A1D-B71A-465FF47216EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDD015AC-0EA5-4A1D-B71A-465FF47216EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDD015AC-0EA5-4A1D-B71A-465FF47216EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
