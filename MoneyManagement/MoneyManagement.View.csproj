@@ -161,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Accounts\Credit\CreditAccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -221,6 +222,8 @@
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\CreditAccount\Index.cshtml" />
+    <Content Include="Views\CreditAccount\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -231,6 +234,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MoneyManagement.BusinessLayer\MoneyManagement.Services.csproj">
+      <Project>{1fe398d3-5de0-4f76-96bb-fa5ff6990680}</Project>
+      <Name>MoneyManagement.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MoneyManagement.Contracts\MoneyManagement.Contracts.csproj">
+      <Project>{bdd015ac-0ea5-4a1d-b71a-465ff47216eb}</Project>
+      <Name>MoneyManagement.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
