@@ -22,6 +22,15 @@ namespace MoneyManagement.Controllers.Accounts.Credit
 
         public ActionResult Create()
         {
+            var bankManager = new BankManager();
+            var cardTypeManager = new CardTypeManager();
+            
+            var banks = bankManager.Get();
+            var cardTypes = cardTypeManager.Get();
+
+            ViewBag.Banks = new SelectList(banks, "Id", "Description");
+            ViewBag.CardTypes = new SelectList(cardTypes, "Id", "Description");
+
             return View();
         }
 
