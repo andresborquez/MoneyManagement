@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2ea716a04ee44a5d88c072bb9420b6b2" Name="Diagram1" >
+        <EntityTypeShape EntityType="Model.Country" Width="1.5" PointX="6.75" PointY="1" />
+        <EntityTypeShape EntityType="Model.Bank" Width="1.5" PointX="4.25" PointY="3.5" />
+        <AssociationConnector Association="Model.BankCountry" />
+        <EntityTypeShape EntityType="Model.Account" Width="1.5" PointX="2.75" PointY="0.5" />
+        <AssociationConnector Association="Model.AccountBank" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.CreditAccount" Width="1.5" PointX="0.75" PointY="3.5" />
+        <InheritanceConnector EntityType="Model.CreditAccount" ManuallyRouted="false" >
+        </InheritanceConnector>
+        <EntityTypeShape EntityType="Model.Address" Width="1.5" PointX="6" PointY="3.5" />
+        <EntityTypeShape EntityType="Model.State" Width="1.5" PointX="8.875" PointY="1" />
+        <EntityTypeShape EntityType="Model.City" Width="1.5" PointX="8.875" PointY="3.125" />
+        <AssociationConnector Association="Model.CountryState" />
+        <AssociationConnector Association="Model.CityState" />
+        <AssociationConnector Association="Model.CityAddress" />
+        <AssociationConnector Association="Model.AccountAddress" ManuallyRouted="true" >
+          <ConnectorPoint PointX="4.125" PointY="2.287985026041667" />
+          <ConnectorPoint PointX="4.125" PointY="5.2230843098958335" />
+          <ConnectorPoint PointX="6" PointY="5.2230843098958335" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model.CardType" Width="1.5" PointX="2.5" PointY="3.5" />
+        <AssociationConnector Association="Model.AccountCardType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,9 @@
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\bin\Debug\MoneyManagement.DataLayer.dll.config
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\bin\Debug\MoneyManagement.DataLayer.dll
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\bin\Debug\MoneyManagement.DataLayer.pdb
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\obj\Debug\MoneyManagement.DataLayer.dll
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.DataLayer\obj\Debug\MoneyManagement.DataLayer.pdb

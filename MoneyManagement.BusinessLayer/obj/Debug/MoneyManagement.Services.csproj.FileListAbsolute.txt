@@ -1,0 +1,7 @@
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.BusinessLayer\bin\Debug\MoneyManagement.BusinessLayer.dll
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.BusinessLayer\bin\Debug\MoneyManagement.BusinessLayer.pdb
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.BusinessLayer\bin\Debug\MoneyManagement.Contracts.dll
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.BusinessLayer\bin\Debug\MoneyManagement.Contracts.pdb
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.BusinessLayer\obj\Debug\MoneyManagement.BusinessLayer.dll
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.BusinessLayer\obj\Debug\MoneyManagement.BusinessLayer.pdb
+C:\Users\aaborquez\Documents\GitHub\MoneyManagement\MoneyManagement\MoneyManagement.BusinessLayer\obj\Debug\MoneyManagement.Services.csprojResolveAssemblyReference.cache

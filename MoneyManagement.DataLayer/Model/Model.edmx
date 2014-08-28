@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="ModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Countries" EntityType="Model.Country" />
+          <EntitySet Name="Banks" EntityType="Model.Bank" />
+          <AssociationSet Name="BankCountry" Association="Model.BankCountry">
+            <End Role="Bank" EntitySet="Banks" />
+            <End Role="Country" EntitySet="Countries" />
+          </AssociationSet>
+          <EntitySet Name="Accounts" EntityType="Model.Account" />
+          <AssociationSet Name="AccountBank" Association="Model.AccountBank">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Bank" EntitySet="Banks" />
+          </AssociationSet>
+          <EntitySet Name="Addresses" EntityType="Model.Address" />
+          <EntitySet Name="States" EntityType="Model.State" />
+          <EntitySet Name="Cities" EntityType="Model.City" />
+          <AssociationSet Name="CountryState" Association="Model.CountryState">
+            <End Role="Country" EntitySet="Countries" />
+            <End Role="State" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="CityState" Association="Model.CityState">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="State" EntitySet="States" />
+          </AssociationSet>
+          <AssociationSet Name="CityAddress" Association="Model.CityAddress">
+            <End Role="City" EntitySet="Cities" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="AccountAddress" Association="Model.AccountAddress">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="Address" EntitySet="Addresses" />
+          </AssociationSet>
+          <EntitySet Name="CardTypes" EntityType="Model.CardType" />
+          <AssociationSet Name="AccountCardType" Association="Model.AccountCardType">
+            <End Role="Account" EntitySet="Accounts" />
+            <End Role="CardType" EntitySet="CardTypes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="States" Relationship="Model.CountryState" FromRole="Country" ToRole="State" />
+        </EntityType>
+        <EntityType Name="Bank">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="Countries" Relationship="Model.BankCountry" FromRole="Bank" ToRole="Country" />
+        </EntityType>
+        <Association Name="BankCountry">
+          <End Type="Model.Bank" Role="Bank" Multiplicity="*" />
+          <End Type="Model.Country" Role="Country" Multiplicity="*" />
+        </Association>
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="Number" />
+          </Key>
+          <Property Name="Number" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <NavigationProperty Name="BillingAddress" Relationship="Model.AccountAddress" FromRole="Account" ToRole="Address" />
+          <Property Name="CardTypeId" Type="String" Nullable="false" />
+          <Property Name="BankId" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="AccountBank">
+          <End Type="Model.Account" Role="Account" Multiplicity="*" />
+          <End Type="Model.Bank" Role="Bank" Multiplicity="1" />
+        </Association>
+        <EntityType Name="CreditAccount" BaseType="Model.Account" >
+          <Property Name="GracePeriod" Type="Int32" Nullable="false" />
+          <Property Name="EndDayPeriod" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Street" Type="String" Nullable="false" />
+          <Property Name="Zip" Type="String" Nullable="false" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <NavigationProperty Name="Cities" Relationship="Model.CityState" FromRole="State" ToRole="City" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="CountryState">
+          <End Type="Model.Country" Role="Country" Multiplicity="1" />
+          <End Type="Model.State" Role="State" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="State">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CityState">
+          <End Type="Model.City" Role="City" Multiplicity="*" />
+          <End Type="Model.State" Role="State" Multiplicity="1" />
+        </Association>
+        <Association Name="CityAddress">
+          <End Type="Model.City" Role="City" Multiplicity="1" />
+          <End Type="Model.Address" Role="Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Address">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AccountAddress">
+          <End Type="Model.Account" Role="Account" Multiplicity="*" />
+          <End Type="Model.Address" Role="Address" Multiplicity="1" />
+        </Association>
+        <EntityType Name="CardType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="AccountCardType">
+          <End Type="Model.Account" Role="Account" Multiplicity="1" />
+          <End Type="Model.CardType" Role="CardType" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="Model" />
+        <Alias Key="Target" Value="Model.Store" />
+        <EntityContainerMapping CdmEntityContainer="ModelContainer" StorageEntityContainer="ModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
